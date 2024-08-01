@@ -18,7 +18,7 @@ weather = st.number_input("Enter the weather condition:")
 day  = st.number_input("Enter the day:")
 hour = st.number_input("Enter the hour:")
 
-#weather_numerical  = (1 if weather == 'rainy'else 2 if weather == 'foggy' else 3)
+weather_numerical  = (1 if weather == 'rainy'else 2 if weather == 'foggy' else 3)
 if st.button('Submit'):
    model = pickle.load(open(r"estimator.pkl","rb"))
    time = model.predict([[start_lat,start_lang ,end_lat,end_lang,dist,density,weather_numerical,day,hour]])[0]
